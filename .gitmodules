@@ -1,0 +1,4 @@
+[submodule "plugins/guizang-ppt-skill"]
+	path = plugins/guizang-ppt-skill
+	url = https://github.com/op7418/guizang-ppt-skill.git
+	ignore = dirty
