@@ -34,11 +34,11 @@ Airwallex 的机会来自全球企业经营方式的变化：跨境电商、SaaS
 | **团队规模** | 全球员工超过 **2000 人**，计划 2026 年底前团队扩大 50%+ | 旧金山成为第二全球总部，伦敦设立工程中心 | 组织重心从亚太走向美国和欧洲，进入真正全球化经营阶段 |
 
 
-*图：Airwallex 2024-2025 核心指标对比，突出 ARR、交易量、客户数和估值的同步上台阶。*
+*图：Airwallex 2025 核心经营指标信息图，突出 ARR、交易量、客户数、网络效率、盈利拐点和估值的同步上台阶。*
 
-![AI 生成展示图：Airwallex 2025 核心经营指标](gpt-image-2-showcase-20260522-050042/images/airwallex-ai-core-metrics-20260522-050042.png)
+![AI 生成信息图：Airwallex 2025 核心经营指标](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-core-metrics.png)
 
-*图：基于核心经营指标生成的 AI 展示图，用于增强报告视觉呈现；准确数据仍以正文和 SVG 图表为准。*
+*图：基于核心经营指标生成的 16:9 教育类信息图，用于增强报告视觉呈现；准确数据仍以正文和 SVG 图表为准。*
 
 从数据结构看，Airwallex 的增长并不是单纯靠获客数量驱动，而是由三条曲线共同推动：
 
@@ -64,6 +64,10 @@ Airwallex 的机会来自全球企业经营方式的变化：跨境电商、SaaS
 
 *图：Airwallex 盈利公式的结构化拆解，突出规模、产品渗透、变现率与成本控制之间的关系。*
 
+![AI 生成信息图：Airwallex 盈利公式](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-profit-formula.png)
+
+*图：基于盈利公式生成的 16:9 教育类信息图，用于解释增长变量、收入变量和成本变量如何共同决定平台盈利能力。*
+
 Airwallex 之所以能在 2025 年 Q4 实现 EBITDA 盈利，关键在于它的底层基础设施开始进入规模经济阶段。早期建设牌照、本地银行连接、支付网络、风控系统和 API 平台都需要巨大固定投入；一旦交易量上来，新增客户和新增交易的边际成本会低于传统银行代理行链路。换句话说，Airwallex 的长期毛利不只来自“向客户收费”，更来自“把传统金融链条中的多层中介成本压缩为平台内部成本”。
 
 ## 收入结构
@@ -82,9 +86,9 @@ Airwallex 未像上市公司那样披露完整分部财报，但根据公开材�
 
 *图：Airwallex 六类收入来源及主要风险，展示其从交易型收入向金融软件型收入迁移的方向。*
 
-![AI 生成展示图：Airwallex 收入结构](gpt-image-2-showcase-20260522-050042/images/airwallex-ai-revenue-streams-20260522-050042.png)
+![AI 生成信息图：Airwallex 收入结构迁移](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-revenue-migration.png)
 
-*图：基于收入结构表生成的 AI 展示图，用于辅助表达从交易型收入到金融软件型收入的迁移方向。*
+*图：基于收入结构表生成的 16:9 教育类信息图，用于辅助表达从交易型收入到金融软件型收入的迁移方向。*
 
 Airwallex 的收入结构正在从“支付交易型”向“金融软件型”迁移。传统支付公司面临的最大问题是费率透明化和竞争压缩，单笔交易 take rate 可能持续下降；但如果 Airwallex 能把企业的全球账户、审批、财务自动化和嵌入式金融能力做深，就可以获得更稳定的软件收入、平台收入和资金管理收入。
 
@@ -107,9 +111,9 @@ Airwallex 的做法是：
 
 *图：Airwallex 的本地路由与当日结算指标，体现其压缩传统跨境支付链路的能力。*
 
-![AI 生成展示图：Airwallex 交易网络效率](gpt-image-2-showcase-20260522-050042/images/airwallex-ai-network-efficiency-20260522-050042.png)
+![AI 生成信息图：Airwallex 交易网络效率](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-network-rails.png)
 
-*图：基于交易网络效率指标生成的 AI 展示图，用于突出本地网络路由、当日结算和全球覆盖。*
+*图：基于交易网络效率指标生成的 16:9 教育类信息图，用于突出本地网络路由、当日结算和全球覆盖。*
 
 这种架构的价值不仅是便宜，更是确定性。跨境企业最怕三件事：不知道钱什么时候到、不知道中间扣了多少钱、不知道付款失败由谁负责。Airwallex 如果能把到账时间、费用、状态追踪和失败重试做成可编程接口，就能成为企业财务系统的一部分，而不只是一个网页端汇款工具。
 
@@ -128,6 +132,10 @@ Airwallex 的产品演进可以分为四层：
 
 
 *图：Airwallex 产品路径从资金入口、资金调拨、资金使用到资金智能化逐层堆叠。*
+
+![AI 生成信息图：Airwallex 产品路径](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-product-stack.png)
+
+*图：基于产品路径生成的 16:9 教育类信息图，用于呈现 Airwallex 从单点支付工具升级为全球金融操作系统的层级关系。*
 
 Airwallex 最初解决的是“跨境换汇贵、付款慢”的问题，但如果只停留在这个层面，很容易被 Wise、Revolut 或银行低价产品替代。真正的升级路径，是让企业在 Airwallex 上完成从收款到付款、从支出到报表、从平台分账到资金收益的全流程。这一点类似 Nubank 从信用卡入口扩展到账户、贷款、投资和保险；不同的是，Airwallex 面向 B2B，产品深度取决于企业流程复杂度，而不是个人金融频次。
 
@@ -221,6 +229,10 @@ Airwallex 的发展可以概括为四个阶段：
 
 
 *图：Airwallex 从痛点验证、基础设施转向、全球牌照扩张到规模化与智能化阶段的演进。*
+
+![AI 生成信息图：Airwallex 全球化路径](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-globalization-timeline.png)
+
+*图：基于发展阶段生成的 16:9 教育类信息图，用于展示 Airwallex 从墨尔本创业痛点到全球金融云叙事的演进路径。*
 
 Airwallex 的路径与很多金融科技公司不同。它没有先做消费者端流量，也没有只做单一 SaaS 软件，而是选择了最重的路线：先补牌照、支付网络、银行连接和风控，再逐步把软件和 AI 叠在上面。这条路前期慢、成本高、监管难，但一旦形成规模，护城河也更深。
 
@@ -370,6 +382,10 @@ Airwallex 的竞争对手并不是一家公司，而是一组工具栈：
 
 *图：Airwallex 面对的是一整套金融工具栈，其竞争逻辑在于跨模块联动，而非单点替代。*
 
+![AI 生成信息图：Airwallex 竞争地图](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-competition-map.png)
+
+*图：基于竞争格局生成的 16:9 教育类信息图，用于说明 Airwallex 与收单、换汇、企业卡、嵌入式金融和企业银行之间的模块化竞争关系。*
+
 因此，Airwallex 的竞争不是“谁汇款费率最低”，而是“谁能成为全球化企业的主财务操作系统”。如果客户只需要偶尔汇款，Wise 可能足够；如果客户只需要互联网收单，Stripe 可能更简单；如果客户只在法国本地经营，Qonto 可能更贴合；但如果客户同时需要多币种收款、供应商付款、平台分账、全球卡支出和 API 自动化，Airwallex 的一体化优势才会显现。
 
 ## 与 Stripe：开发者心智 vs 全球资金调度
@@ -440,9 +456,9 @@ Airwallex 披露，2025 年 EMEA 收入同比增长 **116%**，交易量同比�
 
 *图：EMEA、荷兰与平台账户相关增速对比，突出欧洲市场仍处于高速渗透期。*
 
-![AI 生成展示图：Airwallex 欧洲增长](gpt-image-2-showcase-20260522-050042/images/airwallex-ai-europe-growth-20260522-050042.png)
+![AI 生成信息图：Airwallex 欧洲增长](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-europe-growth.png)
 
-*图：基于欧洲增长数据生成的 AI 展示图，用于强化 EMEA 和荷兰市场高速渗透的视觉表达。*
+*图：基于欧洲增长数据生成的 16:9 教育类信息图，用于强化 EMEA 和荷兰市场高速渗透的视觉表达。*
 
 ## 欧洲扩张的四个抓手
 
@@ -531,6 +547,12 @@ Airwallex 的 AI 商业化可能有三种形式：
 
 短期最现实的是内部降本和客户支持效率提升；中期是 Spend、Billing、Treasury 中的智能建议；长期才可能出现真正可计费的 AI CFO 工作流。
 
+*图：Airwallex AI 财务自动化从内部降本、产品增值到平台能力的商业化路径，以及金融 AI 必须配套的风险护栏。*
+
+![AI 生成信息图：Airwallex AI 财务自动化](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-ai-automation.png)
+
+*图：基于 AI 战略段落生成的 16:9 教育类信息图，用于说明统一数据层、AI 财务代理和可解释风控之间的关系。*
+
 ## AI 风险
 
 金融 AI 的最大问题不是能不能自动化，而是责任归属。若 AI 错误冻结账户、误拒付款、错误放行欺诈交易或给出不当投资建议，客户损失和监管责任都很难处理。Airwallex 如果过度依赖黑箱风控，可能导致客户体验恶化，尤其是中小企业在资金被冻结时缺乏人工申诉通道，会形成负面口碑。
@@ -614,6 +636,10 @@ Airwallex 正在从亚太主导的创业公司，变成新加坡、旧金山、�
 
 
 *图：Nubank 与 Airwallex 同样重构传统金融成本结构，但规模来源、风险类型和终局形态不同。*
+
+![AI 生成信息图：Airwallex 与 Nubank 对比](gpt-image-2-infographics-20260522-0536/images/airwallex-infographic-nubank-comparison.png)
+
+*图：基于 Nubank 对比段落生成的 16:9 教育类信息图，用于突出两家公司在客户类型、起点产品、壁垒、盈利逻辑和风险结构上的差异。*
 
 两者的共同点是：都不是简单用“更便宜”赢，而是用数字化重构金融服务成本结构。Nubank 把银行网点和传统信用卡服务数字化，Airwallex 把代理行、企业账户和财务工具栈数字化。
 
