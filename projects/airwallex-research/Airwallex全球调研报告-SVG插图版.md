@@ -33,6 +33,7 @@ Airwallex 的机会来自全球企业经营方式的变化：跨境电商、SaaS
 | **估值与融资** | 2025 年 12 月 G 轮融资 **3.3 亿美元**，估值 **80 亿美元** | 较 2025 年 5 月 F 轮 62 亿美元估值提升约 30% | 资本市场认可其“全球金融平台 + AI 自动化 + 美国扩张”的叙事 |
 | **团队规模** | 全球员工超过 **2000 人**，计划 2026 年底前团队扩大 50%+ | 旧金山成为第二全球总部，伦敦设立工程中心 | 组织重心从亚太走向美国和欧洲，进入真正全球化经营阶段 |
 
+![Airwallex 核心经营指标进入规模化阶段](assets/charts/airwallex-growth-dashboard.svg)
 
 *图：Airwallex 2024-2025 核心指标对比，突出 ARR、交易量、客户数和估值的同步上台阶。*
 
@@ -57,6 +58,7 @@ Airwallex 的机会来自全球企业经营方式的变化：跨境电商、SaaS
 | **清算成本** | 自建本地支付轨道，减少 SWIFT 和中间行依赖 | 95%+ 交易经本地 rails，平均转账成本下降约 33% | 每笔交易边际成本下降，毛利率随规模扩张提升 |
 | **合规与风控成本** | 多国家牌照、KYC/KYB、交易监控、制裁筛查、AI 风控 | 全球 80+ 牌照/许可及合规覆盖口径被反复强调 | 合规是护城河，也是最大固定成本和客户体验风险 |
 
+![Airwallex 盈利公式拆解](assets/charts/airwallex-profit-formula.svg)
 
 *图：Airwallex 盈利公式的结构化拆解，突出规模、产品渗透、变现率与成本控制之间的关系。*
 
@@ -75,6 +77,7 @@ Airwallex 未像上市公司那样披露完整分部财报，但根据公开材�
 | **Billing 与订阅收入** | OpenPay 收购后增强发票、订阅、用量计费、应收管理 | AI/SaaS 公司需要全球订阅计费和多币种收款 | Stripe Billing、Chargebee、Recurly 等成熟玩家强势 |
 | **Yield 与资金管理收入** | 闲置余额投资货币市场基金或收益产品，平台可能获得服务费/分成 | 2025 年末 Yield 管理资金接近 10 亿美元，同比增长 6 倍以上 | 利率下行会削弱吸引力；投资产品监管和适当性要求更高 |
 
+![Airwallex 收入结构图](assets/charts/airwallex-revenue-streams.svg)
 
 *图：Airwallex 六类收入来源及主要风险，展示其从交易型收入向金融软件型收入迁移的方向。*
 
@@ -96,6 +99,7 @@ Airwallex 的做法是：
 4. 在客户确实需要换汇时，以更透明的 FX 引擎和较低加价完成兑换。
 5. 把资金流和 API、审批、会计系统打通，减少财务团队人工对账。
 
+![Airwallex 本地支付网络效率指标](assets/charts/airwallex-network-efficiency.svg)
 
 *图：Airwallex 的本地路由与当日结算指标，体现其压缩传统跨境支付链路的能力。*
 
@@ -114,6 +118,7 @@ Airwallex 的产品演进可以分为四层：
 | **资金使用** | 企业卡、虚拟卡、支出管理、报销、预算、审批 | 控制员工和团队支出，减少报销和审计成本 | 深入企业日常运营 |
 | **资金智能化** | Billing、Yield、Embedded Finance、AI Agents、财务自动化 | 把收款、订阅、收益、分账和对账做成自动化工作流 | 从支付工具升级为金融云 |
 
+![Airwallex 产品路径四层架构](assets/charts/airwallex-product-stack.svg)
 
 *图：Airwallex 产品路径从资金入口、资金调拨、资金使用到资金智能化逐层堆叠。*
 
@@ -131,6 +136,7 @@ Airwallex 最初解决的是“跨境换汇贵、付款慢”的问题，但如�
 
 全球账户的战略意义在于资金沉淀。支付网关通常处理“经过的钱”，而多币种账户处理“留下的钱”。一旦客户余额留在 Airwallex，企业卡、付款、换汇、Yield、费用管理和 Billing 都能围绕余额继续变现。
 
+![Airwallex 产品和基础设施覆盖扩张](assets/charts/airwallex-coverage-expansion.svg)
 
 *图：Airwallex 在 Global Account、钱包币种、Local Transfer 与 SWIFT Transfer 上的覆盖变化，展示网络密度提升。*
 
@@ -207,6 +213,7 @@ Airwallex 的发展可以概括为四个阶段：
 | **全球牌照扩张阶段** | 2020-2024 | 在英国、荷兰、美国、新加坡、香港、澳大利亚等市场扩张牌照和产品，客户数突破 15 万，ARR 超 5 亿美元 | 从亚太出海工具变成全球企业金融平台 |
 | **规模化与智能化阶段** | 2025-至今 | ARR 破 10 亿美元，年化交易量 2660 亿美元，G 轮估值 80 亿美元，旧金山第二总部，AI Agents 和 Billing 加速 | 进入“全球金融操作系统”竞争，目标从支付效率转向财务自动化 |
 
+![Airwallex 全球化路径时间线](assets/charts/airwallex-globalization-timeline.svg)
 
 *图：Airwallex 从痛点验证、基础设施转向、全球牌照扩张到规模化与智能化阶段的演进。*
 
@@ -355,6 +362,7 @@ Airwallex 的竞争对手并不是一家公司，而是一组工具栈：
 | 平台分账/嵌入式金融 | Stripe Connect、Adyen for Platforms、Modern Treasury、Unit | 用全球账户、付款和 FX 能力服务跨国平台 |
 | 企业银行 | HSBC、Citi、JPMorgan、DBS、汇丰、渣打等 | 服务银行覆盖不足的数字化中型企业和平台客户 |
 
+![Airwallex 竞争格局图](assets/charts/airwallex-competition-map.svg)
 
 *图：Airwallex 面对的是一整套金融工具栈，其竞争逻辑在于跨模块联动，而非单点替代。*
 
@@ -425,6 +433,7 @@ Airwallex 披露，2025 年 EMEA 收入同比增长 **116%**，交易量同比�
 
 荷兰市场尤其值得关注。Airwallex 曾披露荷兰收入同比增长 **199%**，活跃客户账户数翻倍甚至更高。荷兰不仅是欧盟牌照所在地，也是欧洲贸易和电商枢纽。荷兰跑通后，Airwallex 可以用 DNB EMI 和 AFM MiFID 授权向更多欧盟市场扩张。
 
+![Airwallex 欧洲市场增长数据](assets/charts/airwallex-europe-growth.svg)
 
 *图：EMEA、荷兰与平台账户相关增速对比，突出欧洲市场仍处于高速渗透期。*
 
@@ -596,6 +605,7 @@ Airwallex 正在从亚太主导的创业公司，变成新加坡、旧金山、�
 | 最大风险 | 信贷周期和不良率 | 合规、账户冻结、企业级稳定性和竞争 |
 | 终局形态 | 拉美数字金融超级平台 | 全球企业金融操作系统/金融云 |
 
+![Nubank 与 Airwallex 对比图](assets/charts/airwallex-nubank-comparison.svg)
 
 *图：Nubank 与 Airwallex 同样重构传统金融成本结构，但规模来源、风险类型和终局形态不同。*
 
