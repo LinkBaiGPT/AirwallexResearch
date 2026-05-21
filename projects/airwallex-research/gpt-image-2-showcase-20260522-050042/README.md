@@ -4,9 +4,16 @@
 
 ## 当前状态
 
-当前环境缺少 `OPENAI_API_KEY`，因此尚未执行真实 GPT-image-2 生成。已准备好提示词文件和输出目录，密钥配置好后可直接运行。
+已根据报告中的数据和表格生成 4 张 PNG 展示图，并复制到 `images/` 目录。当前生成使用 Codex 内置 `image_gen` 工具完成，不依赖 `OPENAI_API_KEY`。
 
-## 运行命令
+已生成文件：
+
+- `images/airwallex-ai-core-metrics-20260522-050042.png`
+- `images/airwallex-ai-network-efficiency-20260522-050042.png`
+- `images/airwallex-ai-europe-growth-20260522-050042.png`
+- `images/airwallex-ai-revenue-streams-20260522-050042.png`
+
+## GPT-image-2 CLI 备用命令
 
 ```bash
 export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
@@ -23,5 +30,4 @@ python "$IMAGE_GEN" generate-batch \
 
 ## 精准性原则
 
-GPT-image-2 不适合直接承担关键数字和中文小字的最终数据层。为保证数据精准，提示词要求生成专业展示底图和版式感，不要求模型自由改写数字。最终发布时应以项目内现有 SVG 图表作为准确数据层，GPT-image-2 输出用于增强展示感和视觉语境。
-
+AI 生成图片不适合单独承担关键数字和中文小字的最终数据层。为保证数据精准，最终发布时应以项目内现有 SVG 图表和正文为准确数据层，AI 输出用于增强展示感和视觉语境。
