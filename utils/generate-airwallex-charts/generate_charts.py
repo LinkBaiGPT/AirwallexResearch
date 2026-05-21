@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import textwrap
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
-from matplotlib.patches import FancyBboxPatch
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 
 # 输出图表目录，默认写回 Airwallex 项目资产目录。
@@ -58,6 +59,60 @@ EUROPE_GROWTH = [
     ("Connected accounts", 149),
 ]
 
+# 盈利公式拆解。
+PROFIT_FORMULA_ITEMS = [
+    ("企业客户数", "20万+ 企业客户", COLOR_PRIMARY),
+    ("单客户交易量", "2660亿美元年化交易量", COLOR_ACCENT),
+    ("产品渗透率", "半数以上客户使用多产品", COLOR_WARNING),
+    ("Take Rate", "FX / 交易费 / 卡 / 软件 / Yield", "#7C3AED"),
+    ("清算与合规成本", "本地 rails 降成本，合规是固定成本", COLOR_MUTED),
+]
+
+# 收入结构表对应图。
+REVENUE_STREAMS = [
+    ("跨境支付与 FX", "付款 / 收款 / 换汇", "价格竞争"),
+    ("收单与本地支付", "卡收单 / 本地支付方式", "Stripe / Adyen"),
+    ("企业卡与 Spend", "虚拟卡 / 报销 / 审批", "本地费用管理"),
+    ("嵌入式金融", "API / 分账 / 钱包", "平台稳定性"),
+    ("Billing", "订阅 / 发票 / 应收", "成熟 SaaS 玩家"),
+    ("Yield / Treasury", "闲置资金管理", "利率与监管"),
+]
+
+# 产品路径四层。
+PRODUCT_LAYERS = [
+    ("资金入口", "全球账户 / 本地收款 / 线上收单", "抢占企业资金流入口", COLOR_PRIMARY),
+    ("资金调拨", "跨境付款 / 批量付款 / FX", "替代传统银行跨境汇款", COLOR_ACCENT),
+    ("资金使用", "企业卡 / 支出管理 / 报销审批", "进入企业日常运营", COLOR_WARNING),
+    ("资金智能化", "Billing / Yield / Embedded Finance / AI Agents", "升级为金融云", "#7C3AED"),
+]
+
+# 全球化阶段。
+GLOBALIZATION_STAGES = [
+    ("2015-2017", "痛点验证", "从咖啡馆跨境采购痛点切入"),
+    ("2017-2020", "基础设施转向", "API 驱动跨境支付基础设施"),
+    ("2020-2024", "全球牌照扩张", "客户数突破 15 万，ARR 超 5 亿美元"),
+    ("2025-至今", "规模化与智能化", "ARR 破 10 亿美元，AI Agents 加速"),
+]
+
+# 竞争格局。
+COMPETITION_MAP = [
+    ("线上收单", "Stripe / Adyen / Mollie", "收单资金接入多币种账户"),
+    ("跨境汇款", "Wise / Revolut / 银行", "更深 API、审批和平台能力"),
+    ("企业卡费用", "Brex / Ramp / Qonto", "绑定多币种余额降低 FX 损耗"),
+    ("平台分账", "Stripe Connect / Adyen", "服务跨国平台钱包与出金"),
+    ("企业银行", "HSBC / Citi / JPMorgan", "覆盖中型数字化企业空白"),
+]
+
+# Nubank 对比。
+NUBANK_COMPARISON = [
+    ("客户类型", "C 端个人与小微", "B2B 企业与平台"),
+    ("起点产品", "无年费信用卡", "跨境支付和外汇"),
+    ("核心壁垒", "用户规模 / 信用数据", "牌照 / 本地网络 / API"),
+    ("盈利逻辑", "活跃用户 × ARPAC", "企业资金流 × 产品渗透"),
+    ("最大风险", "信贷周期", "合规与系统可靠性"),
+    ("终局形态", "拉美数字金融平台", "全球企业金融操作系统"),
+]
+
 
 def setup_style() -> None:
     for font_path in FONT_CANDIDATES:
@@ -84,8 +139,39 @@ def add_title(fig, title: str, subtitle: str) -> None:
 
 def save_chart(fig, filename: str) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    fig.savefig(OUTPUT_DIR / filename, bbox_inches="tight")
+    fig.savefig(OUTPUT_DIR / filename, bbox_inches="tight", metadata={"Date": None})
     plt.close(fig)
+
+
+def wrap(text: str, width: int = 18) -> str:
+    return "\n".join(textwrap.wrap(text, width=width, break_long_words=False, replace_whitespace=False))
+
+
+def fig_card(fig, x: float, y: float, w: float, h: float, face: str = "#F8FAFC", edge: str = COLOR_GRID) -> None:
+    patch = FancyBboxPatch(
+        (x, y),
+        w,
+        h,
+        boxstyle="round,pad=0.012,rounding_size=0.018",
+        transform=fig.transFigure,
+        linewidth=1,
+        edgecolor=edge,
+        facecolor=face,
+    )
+    fig.patches.append(patch)
+
+
+def fig_arrow(fig, start: tuple[float, float], end: tuple[float, float], color: str = COLOR_GRID) -> None:
+    arrow = FancyArrowPatch(
+        start,
+        end,
+        transform=fig.transFigure,
+        arrowstyle="-|>",
+        mutation_scale=14,
+        linewidth=1.2,
+        color=color,
+    )
+    fig.patches.append(arrow)
 
 
 def chart_growth_dashboard() -> None:
@@ -215,15 +301,150 @@ def chart_europe_growth() -> None:
     save_chart(fig, "airwallex-europe-growth.svg")
 
 
+def chart_profit_formula() -> None:
+    fig, ax = plt.subplots(figsize=(13.6, 5.6))
+    add_title(fig, "Airwallex 盈利公式：规模、渗透与成本控制同时作用", "表格中的变量可以理解为一条从客户规模到平台盈利能力的价值链。")
+    ax.axis("off")
+
+    xs = [0.055, 0.235, 0.415, 0.595, 0.775]
+    y = 0.35
+    w = 0.145
+    h = 0.30
+    for i, (label, detail, color) in enumerate(PROFIT_FORMULA_ITEMS):
+        fig_card(fig, xs[i], y, w, h)
+        fig.text(xs[i] + 0.018, y + h - 0.07, label, fontsize=12.5, color=COLOR_DARK, fontweight="bold")
+        fig.text(xs[i] + 0.018, y + 0.13, wrap(detail, 12), fontsize=10, color=COLOR_MUTED, linespacing=1.35)
+        fig.text(xs[i] + 0.018, y + 0.045, "驱动项" if i < 4 else "成本项", fontsize=10.5, color=color, fontweight="bold")
+        if i < len(xs) - 1:
+            operator = "×" if i < 3 else "−"
+            fig.text(xs[i] + w + 0.012, y + 0.145, operator, fontsize=24, color=COLOR_MUTED, fontweight="bold")
+            fig_arrow(fig, (xs[i] + w + 0.035, y + 0.15), (xs[i + 1] - 0.015, y + 0.15))
+
+    fig_card(fig, 0.28, 0.13, 0.44, 0.10, face="#EEF6FF", edge="#C9E1FF")
+    fig.text(0.305, 0.165, "平台盈利能力 = 企业客户数 × 单客户交易量 × 产品渗透率 × Take Rate − 清算 / FX / 合规 / 服务成本", fontsize=11, color=COLOR_DARK, fontweight="bold")
+    fig.text(0.055, 0.045, "重点：Airwallex 的长期毛利空间，来自自建网络降低边际成本，以及多产品使用提升客户价值。", fontsize=10, color=COLOR_MUTED)
+    save_chart(fig, "airwallex-profit-formula.svg")
+
+
+def chart_revenue_streams() -> None:
+    fig, ax = plt.subplots(figsize=(13.6, 8.0))
+    add_title(fig, "收入结构正在从交易型走向金融软件型", "六类收入来源共同构成 Airwallex 的货币化路径，风险主要来自费率压缩、竞争和监管。")
+    ax.axis("off")
+
+    positions = [(0.055, 0.58), (0.37, 0.58), (0.685, 0.58), (0.055, 0.27), (0.37, 0.27), (0.685, 0.27)]
+    colors = [COLOR_PRIMARY, COLOR_ACCENT, COLOR_WARNING, "#7C3AED", "#0F766E", "#B45309"]
+    for (x, y), (name, source, risk), color in zip(positions, REVENUE_STREAMS, colors):
+        fig_card(fig, x, y, 0.255, 0.22)
+        fig.text(x + 0.02, y + 0.155, name, fontsize=13, color=COLOR_DARK, fontweight="bold")
+        fig.text(x + 0.02, y + 0.100, wrap(source, 16), fontsize=10.2, color=COLOR_MUTED)
+        fig.text(x + 0.02, y + 0.045, f"风险：{risk}", fontsize=10.2, color=color, fontweight="bold")
+
+    fig_card(fig, 0.22, 0.08, 0.56, 0.10, face="#F2F8F5", edge="#CDE8DA")
+    fig.text(0.245, 0.118, "迁移方向：一次性交易费  →  企业卡 / 平台 / Billing / Treasury / AI 自动化等更高粘性收入", fontsize=11, color=COLOR_DARK, fontweight="bold")
+    save_chart(fig, "airwallex-revenue-streams.svg")
+
+
+def chart_product_stack() -> None:
+    fig, ax = plt.subplots(figsize=(13.6, 7.6))
+    add_title(fig, "产品路径：从资金入口堆叠到智能财务操作系统", "表格中的四层能力不是并列功能，而是围绕同一套账户和账本逐层加深。")
+    ax.axis("off")
+
+    x = 0.15
+    w = 0.70
+    h = 0.115
+    ys = [0.25, 0.39, 0.53, 0.67]
+    for idx, ((name, ability, meaning, color), y) in enumerate(zip(PRODUCT_LAYERS, ys)):
+        fig_card(fig, x, y, w, h, face="#F8FAFC")
+        fig.text(x + 0.025, y + 0.072, name, fontsize=14, color=color, fontweight="bold")
+        fig.text(x + 0.20, y + 0.073, ability, fontsize=11.2, color=COLOR_DARK)
+        fig.text(x + 0.20, y + 0.030, meaning, fontsize=10.2, color=COLOR_MUTED)
+        if idx < len(ys) - 1:
+            fig_arrow(fig, (0.50, y + h + 0.01), (0.50, ys[idx + 1] - 0.012), color="#BCD2EA")
+
+    fig.text(0.15, 0.16, "阅读方式：越往上，Airwallex 越接近企业财务工作台；越往下，越接近支付和账户基础设施。", fontsize=10.5, color=COLOR_MUTED)
+    save_chart(fig, "airwallex-product-stack.svg")
+
+
+def chart_globalization_timeline() -> None:
+    fig, ax = plt.subplots(figsize=(13.6, 6.4))
+    add_title(fig, "全球化路径：从痛点工具到金融基础设施平台", "Airwallex 的关键变化，是从前端工具逐步转向牌照、网络、API 和 AI 自动化。")
+    ax.axis("off")
+
+    y = 0.46
+    x_positions = [0.08, 0.315, 0.55, 0.785]
+    for idx, ((period, stage, detail), x) in enumerate(zip(GLOBALIZATION_STAGES, x_positions)):
+        fig_card(fig, x, y, 0.17, 0.23)
+        fig.text(x + 0.018, y + 0.165, period, fontsize=11, color=COLOR_PRIMARY, fontweight="bold")
+        fig.text(x + 0.018, y + 0.115, stage, fontsize=13, color=COLOR_DARK, fontweight="bold")
+        fig.text(x + 0.018, y + 0.045, wrap(detail, 13), fontsize=9.7, color=COLOR_MUTED, linespacing=1.3)
+        if idx < len(x_positions) - 1:
+            fig_arrow(fig, (x + 0.18, y + 0.115), (x_positions[idx + 1] - 0.012, y + 0.115), color="#BCD2EA")
+
+    fig_card(fig, 0.18, 0.18, 0.64, 0.11, face="#EEF6FF", edge="#C9E1FF")
+    fig.text(0.205, 0.222, "主线：跨境支付痛点验证 → API 基础设施 → 全球牌照网络 → 规模化、盈利拐点与 AI 财务自动化", fontsize=11, color=COLOR_DARK, fontweight="bold")
+    save_chart(fig, "airwallex-globalization-timeline.svg")
+
+
+def chart_competition_map() -> None:
+    fig, ax = plt.subplots(figsize=(13.6, 8.0))
+    add_title(fig, "竞争格局：Airwallex 面对的是一整套金融工具栈", "一体化优势来自跨模块联动，而不是在每个单点上都替代垂直冠军。")
+    ax.axis("off")
+
+    x_left, x_mid, x_right = 0.065, 0.39, 0.70
+    y0, gap = 0.70, 0.115
+    fig.text(x_left, 0.80, "业务环节", fontsize=12, color=COLOR_MUTED, fontweight="bold")
+    fig.text(x_mid, 0.80, "主要竞争者", fontsize=12, color=COLOR_MUTED, fontweight="bold")
+    fig.text(x_right, 0.80, "Airwallex 的竞争逻辑", fontsize=12, color=COLOR_MUTED, fontweight="bold")
+    for idx, (segment, rivals, logic) in enumerate(COMPETITION_MAP):
+        y = y0 - idx * gap
+        fig_card(fig, x_left, y, 0.22, 0.075, face="#F8FAFC")
+        fig_card(fig, x_mid, y, 0.22, 0.075, face="#FFFFFF")
+        fig_card(fig, x_right, y, 0.24, 0.075, face="#F2F8F5", edge="#CDE8DA")
+        fig.text(x_left + 0.015, y + 0.028, segment, fontsize=11, color=COLOR_DARK, fontweight="bold")
+        fig.text(x_mid + 0.015, y + 0.028, wrap(rivals, 22), fontsize=9.3, color=COLOR_MUTED)
+        fig.text(x_right + 0.015, y + 0.028, wrap(logic, 18), fontsize=9.3, color=COLOR_DARK)
+        fig_arrow(fig, (x_left + 0.235, y + 0.038), (x_mid - 0.012, y + 0.038), color="#D1DCEB")
+        fig_arrow(fig, (x_mid + 0.235, y + 0.038), (x_right - 0.012, y + 0.038), color="#D1DCEB")
+
+    fig.text(0.065, 0.065, "重点：Airwallex 的强项不是单点最低价，而是把收款、账户、付款、卡、费用和平台能力放进同一账本。", fontsize=10.5, color=COLOR_MUTED)
+    save_chart(fig, "airwallex-competition-map.svg")
+
+
+def chart_nubank_comparison() -> None:
+    fig, ax = plt.subplots(figsize=(13.6, 8.2))
+    add_title(fig, "Nubank vs Airwallex：同是金融数字化，规模来源不同", "Nubank 抓个人金融频次，Airwallex 抓全球企业资金流和企业工作流。")
+    ax.axis("off")
+
+    fig_card(fig, 0.11, 0.17, 0.34, 0.62, face="#F8FAFC")
+    fig_card(fig, 0.55, 0.17, 0.34, 0.62, face="#EEF6FF", edge="#C9E1FF")
+    fig.text(0.24, 0.735, "Nubank", fontsize=20, color="#7C3AED", fontweight="bold", ha="center")
+    fig.text(0.72, 0.735, "Airwallex", fontsize=20, color=COLOR_PRIMARY, fontweight="bold", ha="center")
+
+    y = 0.66
+    for label, nubank, airwallex in NUBANK_COMPARISON:
+        fig.text(0.49, y, label, fontsize=10.5, color=COLOR_MUTED, fontweight="bold", ha="center")
+        fig.text(0.135, y, wrap(nubank, 14), fontsize=10.2, color=COLOR_DARK, ha="left")
+        fig.text(0.575, y, wrap(airwallex, 15), fontsize=10.2, color=COLOR_DARK, ha="left")
+        y -= 0.078
+
+    fig.text(0.11, 0.075, "共同点：不是简单用“更便宜”赢，而是用数字化重构传统金融服务的成本结构和触达方式。", fontsize=10.5, color=COLOR_MUTED)
+    save_chart(fig, "airwallex-nubank-comparison.svg")
+
+
 def main() -> None:
     setup_style()
     chart_growth_dashboard()
+    chart_profit_formula()
+    chart_revenue_streams()
     chart_network_efficiency()
+    chart_product_stack()
     chart_coverage_expansion()
+    chart_globalization_timeline()
+    chart_competition_map()
     chart_europe_growth()
+    chart_nubank_comparison()
     print(f"生成完成：{OUTPUT_DIR}")
 
 
 if __name__ == "__main__":
     main()
-
